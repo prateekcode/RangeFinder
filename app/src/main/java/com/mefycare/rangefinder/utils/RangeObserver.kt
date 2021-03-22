@@ -35,4 +35,47 @@ object RangeObserver {
             }
         }
     }
+
+    fun ageFromUserInput(age: Int, mdy: String): String{
+        var stringAge = ""
+        when (mdy) {
+            "days" -> {
+                stringAge = if (age < 30){
+                    "0-30 days"
+                }else{
+                    "31-60 days"
+                }
+            }
+            "months" -> {
+                stringAge = when (age) {
+                    in 2..3 -> {
+                        "2-3 months"
+                    }
+                    in 6..12 -> {
+                        "6-12 months"
+                    }
+                    else -> {
+                        "Not Found"
+                    }
+                }
+            }
+            else -> {
+                stringAge = when (age) {
+                    in 1..5 -> {
+                        "1-5 years"
+                    }
+                    in 5..11 -> {
+                        "5-11 years"
+                    }
+                    in 12..18 -> {
+                        "12-18 years"
+                    }
+                    else -> {
+                        "18 years"
+                    }
+                }
+            }
+        }
+        return stringAge
+    }
 }
