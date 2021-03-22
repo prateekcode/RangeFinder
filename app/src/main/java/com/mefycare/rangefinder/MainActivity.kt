@@ -16,8 +16,9 @@ class MainActivity : AppCompatActivity() {
         val y = "years"
 
         val ageOfPatient = RangeObserver.ageFromUserInput(50, y)
-        RangeObserver.getTheRange(applicationContext, "hct_hematocrit", "Male", ageOfPatient)
+        val rangeOfPatient = RangeObserver.getTheRange(applicationContext, "hct_hematocrit", "Male", ageOfPatient)
 
+        Log.d(TAG, "Returning the Range: $rangeOfPatient")
         Log.d(TAG, RangeObserver.ageFromUserInput(50, "years"))
     }
 }

@@ -10,7 +10,8 @@ import java.lang.NullPointerException
 
 object RangeObserver {
 
-    fun getTheRange(context: Context, key: String, gender: String, age: String){
+    fun getTheRange(context: Context, key: String, gender: String, age: String) : String{
+        var range= ""
         val newJsonString = getJsonDataFromAsset(context, "json_tests.json")
         val gson = Gson()
         val listTestItem = object : TypeToken<List<TestItem>>() {}.type
@@ -25,6 +26,7 @@ object RangeObserver {
                             for (i in it.ranges.indices)
                                 if (it.ranges[i].age == age && it.ranges[i].gender.equals(gender, ignoreCase = true)){
                                     Log.d(TAG, "Range for $age and $gender: ${it.ranges[i].range}")
+                                    range = it.ranges[i].range.toString()
                                 }
                         }
 
@@ -34,6 +36,7 @@ object RangeObserver {
                 }
             }
         }
+        return range
     }
 
     fun ageFromUserInput(age: Int, mdy: String): String{
