@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        RangeObserver.getTheRange(applicationContext, "hgb_haemoglobin", "male", "0-30 days")
+        RangeObserver.getTheRange(applicationContext, "hgb_haemoglobin", "Male", "0-30 days")
     }
 }

@@ -23,7 +23,7 @@ object RangeObserver {
                         Log.d(TAG, "Key of Children: ${it.key} ")
                         if (it.key == key){
                             for (i in it.ranges.indices)
-                                if (it.ranges[i].age == age && it.ranges[i].gender == gender){
+                                if (it.ranges[i].age == age && it.ranges[i].gender.equals(gender, ignoreCase = true)){
                                     Log.d(TAG, "Range for $age and $gender: ${it.ranges[i].range}")
                                 }
                         }
